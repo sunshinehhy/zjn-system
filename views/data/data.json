@@ -1,0 +1,32 @@
+{
+    "index":[
+	{
+		"title": "会员",
+		"price": "CN¥198.00/年*",
+		"type": "premium",
+		"image": "http://i.ftimg.net/picture/6/000068886_piclink.jpg",
+		"teaser": "",
+		"group": "membership",
+		"groupTitle": "会员",
+		"benefits": [
+			"阅读FT中文网所有独家内容",
+			"收听英文文章音频"
+		]
+	},
+	{
+		"title": "高端会员",
+		"price": "CN¥1,998.00/年*",
+		"type": "standard",
+		"image": "http://i.ftimg.net/picture/6/000068886_piclink.jpg",
+		"teaser": "*限时特惠",
+		"group": "membership",
+		"groupTitle": "会员",
+		"benefits": [
+			"《FT编辑精选》，每周不可错过的独家必读内容",
+			"获得两张价值3999元的FT中文网年会门票",
+			"阅读FT中文网所有独家内容",
+			"收听英文文章音频"
+		]
+	}
+]
+}
