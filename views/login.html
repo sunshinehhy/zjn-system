@@ -19,30 +19,33 @@
 </head>
 <body>
 
-<div class="account-container">
+    <div class="account-container">
 
+<!-- action="/index.php/users/registeruser/ajax"  -->
 <div  id="nologincomment" class="nologincomment">
+    <!-- <form method="post" action="/index.php/users/registeruser/ajax"> -->
     <div class="container">
         <div class = "comment-logo-section">LOGO</div>
         <div class = "comment-input-section">
-            <label class="userLabel"></label>
-            <input type="email" placeholder="请输入用户名" autocorrect="off" name="userName" id="userName" class=""/> 
+            <label><img src="http://static.ftchinese.com/images/png/enrolEmail.png"/></label>
+            <input type="email" placeholder="请输入邮箱" autocorrect="off" name="userName" id="userName" class=""/> 
         </div>
         <div class="register-hint"  id = "user-hint">该邮箱已登录，请直接登录</div>
-        <div class="register-hint"  id = "user-correct-check">请输入用户名</div>
-        <!--<div class="register-instruction">40字符以内</div>-->
+        <div class="register-hint"  id = "user-correct-check">请输入有效的邮箱</div>
+        <div class="register-instruction">用于登录ftcc，40字符以内</div>
         <div class = "comment-input-section">
-            <label class="passwordLabel"></label>
+            <label><img src="http://static.ftchinese.com/images/png/accountPassword.png"/></label>
             <input type="password" placeholder="请输入密码" autocorrect="off" name="userPassword" id="userPassword" class=""/>
-            <label class="password-eye" id = "accountEye"></label>
+            <label class="password-eye" id = "accountEye"><img src="http://static.ftchinese.com/images/png/accountEye.png"/></label>
         </div>
         <div class="register-hint" id = "password-hint">请输入正确密码</div>
-        <!--<div class="register-instruction">6-20位英文字母和数字组合</div>-->
-		<div class="register-instruction"><input type="checkbox">下次自动登录</div>
-        <button class="ui-light-btn register-btn" type="submit" onclick="verifyEmailOrPassword()">登录</button>
-        
+        <div class="register-instruction">6-20位英文字母和数字组合</div>
+        <!--<input type="submit" value="注册" class="ui-light-btn register-btn" onclick="login(1)"/> -->
+        <button class="ui-light-btn register-btn" type="submit" onclick="verifyEmailOrPassword()">注册</button>
+        <div class="register-instruction agree-instruction">点击“注册”按钮，即代表您同意FTCC用户注册协议</div>
 
     </div>
+     <!-- </form> -->
 </div>
 
 

@@ -8,6 +8,7 @@ const $ = require('gulp-load-plugins')();
 const cssnext = require('postcss-cssnext');
 const browserSync = require('browser-sync').create();
 var webpack = require('webpack-stream');
+// var webpack = require('webpack');
 var webpackConfig = require('./webpack.config.js')
 
 let cache;
@@ -52,7 +53,7 @@ gulp.task('build-page', () => {
     }))
   })
   .then(() => {
-    console.log('inline--'+process.env.NODE_ENV)
+      console.log('inline--'+process.env.NODE_ENV)
       browserSync.reload('*.html');
       // return Promise.resolve();
     })
