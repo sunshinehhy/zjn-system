@@ -1,41 +1,44 @@
 @import "./layout/base.scss";
+$title-background:#a26565;
+$left-background:#5b5b69;
+$right-background:#FFFFFF;
+$font-color:#FFFFFF;
 div{
-    color: white;
+    color: $font-color;
 }
 .title-container{
     height: 50px;
     margin: 0 auto;
     text-align: center;
     line-height: 50px;
-    background: black;
+    background: $title-background;
     font-size: 20px;
 }
 .float{
     float: left;
 }
 .left-container{
-    background: #6262a0;
-    width:30%;
+    background: $left-background;
+    width:20%;
     height: 100%;
     .category{
         margin: 10px 10px;
-         h2{
-            margin: 20px 0px;
-         }
          h3{
-             margin: 10px 10px;
+            margin: 15px 0px;
+         }
+         h4{
+             margin: 0px 20px;
          }
          ul{
-             margin: 10px 50px;
-            //  list-style-type:square;
+             margin: 5px 40px;
              li{
                 padding: 5px 0px;
-                 list-style-type:square;
+                //  list-style-type:square;
              }
          }
     }
 }
 .right-container{
     width:70%;
-    // background: black;
+    // background: $right-background;
 }
