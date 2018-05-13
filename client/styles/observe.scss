@@ -1,0 +1,41 @@
+@import "./layout/base.scss";
+div{
+    color: white;
+}
+.title-container{
+    height: 50px;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 50px;
+    background: black;
+    font-size: 20px;
+}
+.float{
+    float: left;
+}
+.left-container{
+    background: #6262a0;
+    width:30%;
+    height: 100%;
+    .category{
+        margin: 10px 10px;
+         h2{
+            margin: 20px 0px;
+         }
+         h3{
+             margin: 10px 10px;
+         }
+         ul{
+             margin: 10px 50px;
+            //  list-style-type:square;
+             li{
+                padding: 5px 0px;
+                 list-style-type:square;
+             }
+         }
+    }
+}
+.right-container{
+    width:70%;
+    // background: black;
+}

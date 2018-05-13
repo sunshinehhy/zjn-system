@@ -43,11 +43,9 @@ gulp.task('build-page', () => {
   
   const destDir = '.tmp';
   const pathDetail = loadJsonFile('views/data/path-detail.json');
-  const dataPath = 'views/data/data.json';
-  // detail返回promise
+
   return pathDetail.then(data => {
     const demos = data.demos;
-    //  此运行完之后再返回promise，进行循环返回promise
     return Promise.all(demos.map((demo) => {
       return renderPerView(demo);
     }))
@@ -55,7 +53,6 @@ gulp.task('build-page', () => {
   .then(() => {
       console.log('inline--'+process.env.NODE_ENV)
       browserSync.reload('*.html');
-      // return Promise.resolve();
     })
     .catch(err => {
       console.log(err);
@@ -69,7 +66,8 @@ gulp.task('build-page', () => {
     
     const name = demo.name;
     const template = demo.template;
-    // dataPath不为空loadJsonFile读取不会报错，否则会报错,并且报错后环境为development，可以把页面数据集中在一个json文件中
+    const dataPath = demo.data;
+
       return loadJsonFile(dataPath)
       .then(data => {
         
