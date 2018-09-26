@@ -173,8 +173,12 @@ gulp.task('jshint', function () {
     .pipe($.jshint.reporter('fail'));
 });
 
+gulp.task('copydata', () => {
+  return gulp.src('client/aapl.json')
+    .pipe(gulp.dest('.tmp/'));
+});
 
-gulp.task('serve', gulp.parallel('build-page', 'styles', 'scripts', () => {
+gulp.task('serve', gulp.parallel('build-page', 'styles', 'scripts','copydata', () => {
   browserSync.init({
     server: {
       baseDir: ['.tmp'],

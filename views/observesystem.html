@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html class="core" lang="zh-Hans">
 <head>
 	<meta charset="utf-8">
@@ -55,4 +55,86 @@
 
 </body>
 
+</html>-->
+
+
+
+<!DOCTYPE html>
+<html class="core" lang="zh-Hans">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>登录</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<meta name="copyright" content="众杰能">
+	<meta name="robots" content="index,follow">
+	<meta name="author" content=""> 
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="default" />
+	<meta property="og:locale" content="zh-Hans">
+  
+    <!--<script src="http://static.ftchinese.com/js/jquery-1.10.2.min.js?0"></script>-->
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://code.highcharts.com/stock/highstock.js"></script>
+    <script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
+
+    <!--<link href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.css" rel="stylesheet" />-->
+    
+</head>
+<body>
+
+
+<div id="container" style="height: 400px; min-width: 600px"></div>
+</body>
+
+<script type="text/javascript">
+
+$.getJSON('./aapl.json', function (data) {
+// $.getJSON('https://www.highcharts.com/samples/data/aapl-c.json', function (data) {
+    // Create the chart
+    Highcharts.stockChart('container', {
+
+
+        rangeSelector: {
+            selected: 1
+        },
+
+        title: {
+            text: 'AAPL Stock Price'
+        },
+
+        series: [{
+            name: 'AAPL',
+            data: data,
+            tooltip: {
+                valueDecimals: 2
+            }
+        }]
+
+    }, function (chart) {
+
+        // apply the date pickers
+        setTimeout(function () {
+            $('input.highcharts-range-selector', $(chart.container).parent())
+                .datepicker();
+        }, 0);
+    });
+});
+
+
+// Set the datepicker's date format
+$.datepicker.setDefaults({
+    dateFormat: 'yy-mm-dd',
+    onSelect: function () {
+        this.onchange();
+        this.onblur();
+    }
+});
+
+
+
+</script>
 </html>
